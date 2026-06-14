@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06130f" />
+    <title>戈瓦预测 | 真实赛程检查版</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <style>
+      .preview-banner { background:#cdfb72;color:#102014;text-align:center;padding:7px 16px;font-size:11px;font-weight:800; }
+      .preview-result[hidden], .preview-modal[hidden] { display:none; }
+      .preview-modal { display:grid; }
+      .preview-nav-button { border:0;background:none;color:#a9beb3;padding:0; }
+      .preview-custom-form { display:grid;grid-template-columns:1fr 35px 1fr 130px 140px;gap:8px;padding:0 18px 18px;align-items:center; }
+      @media(max-width:680px){.preview-custom-form{grid-template-columns:1fr}.preview-custom-form>span{display:none}}
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="preview-banner">静态页面不再生成假预测。点击预测按钮将进入使用 OpenRouter GPT-5.5 的本地真实服务。</div>
+      <header class="site-header">
+        <a class="brand" href="#top"><span class="brand-mark">G</span><span><strong>戈瓦预测</strong><small>GOVA PREDICTION</small></span></a>
+        <nav>
+          <a href="#top">AI 预测</a>
+          <a href="#upcoming">完整赛程</a>
+          <a href="#records">公开战绩</a>
+          <button class="preview-nav-button" data-open-purchase>获取次数</button>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="schedule-hero">
+          <div class="schedule-intro">
+            <span class="eyebrow">🏆 2026 世界杯 AI 赛前研判</span>
+            <h1>真实赛程，<em>逐场预测</em></h1>
+            <p>无需随机拼球队。点击未来三天的真实比赛，顶部自动带出对阵、阶段和开赛时间。</p>
+            <div class="trust-row"><span>🔒 赛前官方版本锁定</span><span>✓ 禁止博彩建议</span><span>◈ GPT-5.5 推理</span></div>
+          </div>
+
+          <section class="fixture-hero" id="fixture-hero">
+            <div class="fixture-hero-top">
+              <span id="hero-match-number">第 1 场 · 小组赛</span>
+              <span class="fixture-status">● 未开赛</span>
+              <span class="credits">剩余 <b id="credits">3</b> 次</span>
+            </div>
+            <div class="fixture-versus-grid">
+              <div class="fixture-team">
+                <div class="fixture-emblem"><span id="hero-flag-a">🇩🇪</span></div>
+                <strong id="hero-team-a">德国</strong><small>已确定</small>
+              </div>
+              <div class="fixture-center"><span>VS</span><time id="hero-time">6月14日 周日 · 时间待同步</time><small>北京时间</small></div>
+              <div class="fixture-team">
+                <div class="fixture-emblem"><span id="hero-flag-b">🇨🇼</span></div>
+                <strong id="hero-team-b">库拉索</strong><small>已确定</small>
+              </div>
+            </div>
+            <button class="fixture-predict-button" id="fixture-predict">开始预测 →</button>
+            <p class="form-error" id="preview-error"></p>
+          </section>
+        </section>
+
+        <section class="upcoming-section" id="upcoming">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">NEXT 3 DAYS</span><h2>未来三天赛程</h2></div>
+            <a href="#full-schedule">查看完整赛程 →</a>
+          </div>
+          <div class="stage-tabs" id="stage-tabs">
+            <button class="active" data-stage="全部">全部</button>
+            <button data-stage="小组赛">小组赛</button>
+            <button data-stage="32强">32强</button>
+            <button data-stage="16强">16强</button>
+            <button data-stage="8强">8强</button>
+            <button data-stage="半决赛">半决赛</button>
+            <button data-stage="决赛">决赛</button>
+          </div>
+          <div class="fixture-strip" id="fixture-list"></div>
+
+          <details class="custom-prediction">
+            <summary><span>⚗ 自定义对阵</span><small>扣次数但不计入公开战绩</small><b>⌄</b></summary>
+            <form class="preview-custom-form" id="custom-form">
+              <select id="custom-a"></select><span>VS</span><select id="custom-b"></select>
+              <select id="custom-stage"><option>小组赛</option><option>32强</option><option>16强</option><option>8强</option><option>半决赛</option><option>决赛</option></select>
+              <button>自定义预测</button>
+            </form>
+          </details>
+        </section>
+
+        <section class="page-section schedule-page" id="full-schedule">
+          <div class="page-hero">
+            <span class="eyebrow">FULL TOURNAMENT SCHEDULE</span>
+            <h1>完整赛程与淘汰赛占位</h1>
+            <p>32强球队未产生时展示晋级条件，确定后自动替换为真实国旗和队名。</p>
+          </div>
+          <div class="stage-tabs">
+            <button class="active">小组赛</button><button>32强</button><button>16强</button><button>8强</button><button>半决赛</button><button>决赛</button>
+          </div>
+          <div class="history-list">
+            <article class="history-card"><div class="history-meta"><span class="source-tag official">32强占位</span><time>6月29日</time></div><div class="history-match"><strong>C组第一</strong><div class="score-stack"><span>VS</span><small>第74场</small></div><strong>F组第二</strong></div><p class="backtest-note">晋级球队产生后自动更新</p></article>
+            <article class="history-card"><div class="history-meta"><span class="source-tag official">16强占位</span><time>7月4日</time></div><div class="history-match"><strong>73场胜者</strong><div class="score-stack"><span>VS</span><small>第89场</small></div><strong>75场胜者</strong></div><p class="backtest-note">晋级球队产生后自动更新</p></article>
+          </div>
+        </section>
+
+        <section class="proof-section" id="records">
+          <div class="section-heading"><div><span class="eyebrow">PUBLIC TRACK RECORD</span><h2>公开战绩，不只展示赢的</h2></div><p>自定义预测和赛后回测不会混入官方准确率。</p></div>
+          <div class="stats-grid">
+            <article class="stat-card"><span>▣</span><div><strong>0场</strong><span>已结算官方预测</span></div></article>
+            <article class="stat-card"><span>▥</span><div><strong>--</strong><span>胜平负命中率</span></div></article>
+            <article class="stat-card"><span>◎</span><div><strong>--</strong><span>精确比分命中率</span></div></article>
+            <article class="stat-card"><span>↻</span><div><strong>0场</strong><span>历史回测</span></div></article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><div><strong>戈瓦预测</strong><span>仅供娱乐与球迷讨论，不提供投注、赔率或下注建议。</span></div><span>基于 MIT 开源 Skill 二次开发</span></footer>
+    </div>
+
+    <div class="modal-backdrop preview-modal" id="purchase-modal" hidden>
+      <section class="purchase-modal">
+        <button class="modal-close" id="close-modal">×</button>
+        <span class="eyebrow">朋友专享首发价</span><h2>¥9.9 · 30 次预测</h2>
+        <p>正式部署前会替换为你的微信收款码和联系方式。</p>
+        <div class="purchase-grid"><div class="qr-placeholder"><span>收款码</span><small>等待你提供</small></div><div class="contact-card"><small>付款后联系微信</small><strong>等待你提供微信号</strong></div></div>
+        <div class="redeem-box"><label>已有兑换码</label><div><input id="demo-code" placeholder="GOVA-DEMO-2026" /><button id="demo-redeem">立即兑换</button></div><p id="redeem-message"></p></div>
+      </section>
+    </div>
+    <script src="preview.js"></script>
+  </body>
+</html>

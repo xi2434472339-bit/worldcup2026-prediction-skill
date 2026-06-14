@@ -2,7 +2,7 @@
 
 # ⚽ WorldCup-2026-Prediction-Skill
 
-### 绿茵神算 · 2026 FIFA World Cup AI Prediction Engine
+### 戈瓦预测 · 2026 FIFA World Cup AI Prediction Engine
 
 **一份 system prompt,把任意大模型驯成专业世界杯预测引擎**
 *Turn any LLM into a deterministic World Cup prediction engine with one prompt.*
@@ -18,7 +18,7 @@
 [![Compatible](https://img.shields.io/badge/LLM-DeepSeek%20%7C%20Qwen%20%7C%20GPT%20%7C%20Claude-purple.svg?style=flat-square)](#兼容模型)
 [![Format](https://img.shields.io/badge/output-strict%20JSON-success.svg?style=flat-square)](#输出契约)
 [![Teams](https://img.shields.io/badge/teams-48-9cf.svg?style=flat-square)](skill.md#四球队资料库核心依据)
-[![Matches](https://img.shields.io/badge/matches-64-9cf.svg?style=flat-square)](#)
+[![Matches](https://img.shields.io/badge/matches-104-9cf.svg?style=flat-square)](#)
 [![Updated](https://img.shields.io/badge/data-2026--06--11-informational.svg?style=flat-square)](#)
 
 🔗 **Live Demo** · [worldcup.youliaoyun.com](http://worldcup.youliaoyun.com)
@@ -30,6 +30,25 @@
 ---
 
 </div>
+
+## 🌐 戈瓦预测网站版
+
+本仓库现在包含一个可部署到 Netlify 的 React 网站首版：
+
+- OpenRouter `openai/gpt-5.5` 服务端预测，API Key 不暴露给浏览器
+- 官方预测使用 high 推理，普通预测使用 medium 推理
+- 同一真实赛程的普通预测缓存 6 小时，降低重复调用成本
+- 新访客免费 3 次，兑换码可增加 30 次
+- 首页默认展示北京时间未来三天的真实赛程，不再随机组合球队
+- `/schedule` 提供小组赛到决赛共 104 场完整赛程和淘汰赛晋级占位
+- API-Football 每 30 分钟更新赛程、晋级球队、状态和 90 分钟比分
+- 赛前官方预测锁定、API-Football 自动结算
+- 首页公开胜平负命中率、精确比分命中率和完整历史记录
+- 自定义对阵保留为折叠功能，扣次数但不进入公开战绩
+- 历史回测明确标记为赛后模拟，不计入官方准确率
+- 隐藏管理页 `/manage-gova` 可管理兑换码、赛果和回测
+
+本地运行和 Netlify 配置见 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)。
 
 > *"GUI 是给人手设计的,CLI 是给 AI 设计的。Skill 是给 LLM 用的提示词。"*
 > — 项目作者 · 柱子哥
