@@ -73,6 +73,7 @@ export async function fixturePrediction(
     getSkillPromptVersion(),
   ]);
   if (
+    cached &&
     isFixturePredictionCacheValid(
       cached,
       fixture,

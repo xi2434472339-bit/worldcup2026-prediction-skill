@@ -36,10 +36,14 @@ async function indexedSave<T extends { id: string }>(
   }
 }
 
-async function indexedList<T>(prefix: string, indexKey: string) {
+async function indexedList<T>(prefix: string, indexKey: string): Promise<T[]> {
   const index = (await getJSON<string[]>(indexKey)) ?? [];
-  const values = await Promise.all(index.map((id) => getJSON<T>(`${prefix}/${id}`)));
-  return values.filter((value): value is T => Boolean(value));
+  const values: T[] = [];
+  for (const id of index) {
+    const value = await getJSON<T>(`${prefix}/${id}`);
+    if (value !== null) values.push(value);
+  }
+  return values;
 }
 
 export const db = {
