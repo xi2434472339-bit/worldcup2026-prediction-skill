@@ -9,7 +9,13 @@ import type {
   Stage,
 } from "../shared/domain";
 
+const STATIC_DEPLOYMENT =
+  import.meta.env.VITE_STATIC_DEPLOYMENT === "true";
+
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
+  if (STATIC_DEPLOYMENT) {
+    throw new Error("当前为静态预览站，在线预测服务等待 Netlify 额度恢复");
+  }
   const response = await fetch(url, {
     credentials: "include",
     headers: { "Content-Type": "application/json", ...init?.headers },

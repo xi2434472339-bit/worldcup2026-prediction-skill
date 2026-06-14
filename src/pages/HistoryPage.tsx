@@ -23,7 +23,10 @@ export function HistoryPage() {
     if (filters.team) params.set("team", filters.team);
     if (filters.status) params.set("status", filters.status);
     if (filters.source) params.set("source", filters.source);
-    api.predictions(params).then(setData).finally(() => setLoading(false));
+    api.predictions(params)
+      .then(setData)
+      .catch(() => setData(EMPTY))
+      .finally(() => setLoading(false));
   }
 
   useEffect(() => { load(); }, []);
