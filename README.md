@@ -21,7 +21,7 @@
 [![Matches](https://img.shields.io/badge/matches-104-9cf.svg?style=flat-square)](#)
 [![Updated](https://img.shields.io/badge/data-2026--06--11-informational.svg?style=flat-square)](#)
 
-🔗 **Live Demo** · [worldcup.youliaoyun.com](http://worldcup.youliaoyun.com)
+🔗 **Static Preview** · [xi2434472339-bit.github.io/worldcup2026-prediction-skill](https://xi2434472339-bit.github.io/worldcup2026-prediction-skill/)
 &nbsp;&nbsp;|&nbsp;&nbsp;
 🇨🇳 **中文** · [skill.md](skill.md)
 &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -59,6 +59,7 @@
 - `netlify dev` 可启动前端并加载 11 个 Serverless Functions
 - `/api/bootstrap` 本地返回 200
 - 当前沙盒网络无法连接 OpenRouter 时，`/api/predict` 会返回明确错误，不泄露密钥
+- GitHub Pages 静态预览已上线；赛程与界面可浏览，在线预测等待 Netlify 额度和第三方 API Key 配置完成
 
 > *"GUI 是给人手设计的,CLI 是给 AI 设计的。Skill 是给 LLM 用的提示词。"*
 > — 项目作者 · 柱子哥
