@@ -4,13 +4,23 @@
 
 项目根目录的 `preview.html` 只展示界面，不再生成任何模拟比分。真实预测必须通过 Netlify 本地服务或正式站点调用。
 
-1. 安装依赖：`npm install`
+1. 安装依赖：`npm.cmd install`
 2. 复制 `.env.example` 为 `.env`
 3. 在 `.env` 中填写 OpenRouter API Key 和随机的 `INTERNAL_JOB_SECRET`
 4. 设置临时后台密码：`ADMIN_PASSWORD=你的本地密码`
-5. 启动 Netlify 本地环境：`npm run netlify:dev -- --port 8888`
+5. 启动 Netlify 本地环境：`npm.cmd run netlify:dev -- --port 8888`
 
 必须使用 `netlify:dev`，普通 `npm run dev` 不会启动 Functions 和 Blobs。
+
+本轮已验证：`npm.cmd test` 和 `npm.cmd run build` 均通过；`netlify dev` 能启动 Vite 前端并加载全部 11 个 Serverless Functions；`/api/bootstrap` 本地返回 200。
+
+如果 Windows 本地或离线沙盒在准备 Edge Functions 环境时报 `fetch failed`，而项目没有 `netlify/edge-functions`，可仅用于本地验证时运行：
+
+```powershell
+npx.cmd netlify dev --port 8888 --offline --internal-disable-edge-functions --no-open
+```
+
+该命令只用于本地开发验证，不会创建 Netlify 云资源。
 
 ## 生产环境变量
 
@@ -45,16 +55,18 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 确认本地首版后执行：
 
 ```powershell
-npm run build
-npx netlify login
-npx netlify init --manual
-npx netlify env:set OPENROUTER_API_KEY "..." --secret
-npx netlify env:set OPENROUTER_MODEL "openai/gpt-5.5"
-npx netlify env:set INTERNAL_JOB_SECRET "..." --secret
-npx netlify env:set API_FOOTBALL_KEY "..."
-npx netlify deploy
-npx netlify deploy --prod
+npm.cmd run build
+npx.cmd netlify login
+npx.cmd netlify init --manual
+npx.cmd netlify env:set OPENROUTER_API_KEY "..." --secret
+npx.cmd netlify env:set OPENROUTER_MODEL "openai/gpt-5.5"
+npx.cmd netlify env:set INTERNAL_JOB_SECRET "..." --secret
+npx.cmd netlify env:set API_FOOTBALL_KEY "..."
+npx.cmd netlify deploy
+npx.cmd netlify deploy --prod
 ```
+
+如果仓库已经在 Netlify 后台绑定 GitHub，正常 `git push origin HEAD` 后通常会自动触发构建，不需要手动 `netlify deploy`。若 CLI 显示未登录，只能通过 Netlify 后台确认站点绑定状态。
 
 首次发布前应在 Netlify 后台确认定时函数 `sync-football` 已注册为每 30 分钟运行一次。
 同时确认 `official-prediction-background` 已作为 Background Function 部署；官方 high 推理任务由它执行。

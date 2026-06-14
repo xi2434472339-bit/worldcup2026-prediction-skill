@@ -50,6 +50,16 @@
 
 本地运行和 Netlify 配置见 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)。
 
+### 当前验证状态
+
+截至 2026-06-14，网站首版已完成本地工程验证：
+
+- `npm.cmd test` 通过，20 个测试全部成功
+- `npm.cmd run build` 通过，Vite 生产产物输出到 `dist`
+- `netlify dev` 可启动前端并加载 11 个 Serverless Functions
+- `/api/bootstrap` 本地返回 200
+- 当前沙盒网络无法连接 OpenRouter 时，`/api/predict` 会返回明确错误，不泄露密钥
+
 > *"GUI 是给人手设计的,CLI 是给 AI 设计的。Skill 是给 LLM 用的提示词。"*
 > — 项目作者 · 柱子哥
 
