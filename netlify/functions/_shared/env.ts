@@ -2,7 +2,13 @@ export function env(name: string, fallback = "") {
   const runtime = (globalThis as typeof globalThis & {
     Netlify?: { env: { get: (key: string) => string | undefined } };
   }).Netlify;
-  return runtime?.env.get(name) || process.env[name] || fallback;
+  let runtimeValue = "";
+  try {
+    runtimeValue = runtime?.env.get(name) || "";
+  } catch {
+    runtimeValue = "";
+  }
+  return runtimeValue || process.env[name] || fallback;
 }
 
 export function requiredEnv(name: string) {

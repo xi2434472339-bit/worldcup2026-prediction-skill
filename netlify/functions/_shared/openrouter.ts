@@ -268,6 +268,9 @@ export async function generatePrediction(
       if (error instanceof Error && error.name === "AbortError") {
         throw new Error("GPT-5.5 分析超时，请稍后重试");
       }
+      if (error instanceof TypeError && error.message === "fetch failed") {
+        throw new Error("无法连接 OpenRouter，请检查网络或 OPENROUTER_BASE_URL");
+      }
       throw error;
     } finally {
       clearTimeout(timeout);
