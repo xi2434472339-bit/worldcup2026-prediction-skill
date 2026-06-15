@@ -46,6 +46,24 @@ async function indexedList<T>(prefix: string, indexKey: string): Promise<T[]> {
   return values;
 }
 
+async function indexedSaveMany<T extends { id: string }>(
+  prefix: string,
+  indexKey: string,
+  values: T[],
+) {
+  for (let index = 0; index < values.length; index += 20) {
+    await Promise.all(
+      values
+        .slice(index, index + 20)
+        .map((value) => setJSON(`${prefix}/${value.id}`, value)),
+    );
+  }
+  const existing = (await getJSON<string[]>(indexKey)) ?? [];
+  const ids = values.map((value) => value.id);
+  const next = [...ids, ...existing.filter((id) => !ids.includes(id))];
+  await setJSON(indexKey, next);
+}
+
 export const db = {
   getUsage: (id: string) => getJSON<UsageState>(`usage/${id}`),
   saveUsage: (value: UsageState) => setJSON(`usage/${value.id}`, value),
@@ -67,6 +85,12 @@ export const db = {
   getFixture: (id: string) => getJSON<FixtureRecord>(`fixtures/${id}`),
   saveFixture: (value: FixtureRecord) =>
     indexedSave("fixtures", "indexes/fixtures", { ...value, id: value.fixtureId } as FixtureRecord & { id: string }),
+  saveFixtures: (values: FixtureRecord[]) =>
+    indexedSaveMany(
+      "fixtures",
+      "indexes/fixtures",
+      values.map((value) => ({ ...value, id: value.fixtureId })),
+    ),
   listFixtures: async () => {
     const values = await indexedList<FixtureRecord & { id?: string }>("fixtures", "indexes/fixtures");
     return values.map(({ id: _id, ...value }) => value);

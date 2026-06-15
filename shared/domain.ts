@@ -49,7 +49,7 @@ export interface MatchResult {
   home: number;
   away: number;
   confirmedAt: string;
-  source: "api-football" | "admin";
+  source: "fifa-api" | "api-football" | "admin";
 }
 
 export interface PredictionRecord {
@@ -117,8 +117,12 @@ export interface FixtureRecord {
   kickoff: string;
   kickoffConfirmed: boolean;
   status: string;
+  score?: {
+    home: number;
+    away: number;
+  };
   venue?: string;
-  source: "fifa-fallback" | "api-football";
+  source: "fifa-fallback" | "fifa-api" | "api-football";
   result?: MatchResult;
   updatedAt: string;
 }

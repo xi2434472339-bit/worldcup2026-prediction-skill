@@ -43,7 +43,7 @@ export function SchedulePage() {
         <span className="eyebrow"><CalendarDays size={15} />FULL TOURNAMENT SCHEDULE</span>
         <h1>2026 世界杯完整赛程</h1>
         <p>从小组赛到决赛。淘汰赛球队产生后，晋级席位会自动替换为真实对阵。</p>
-        {usingFallback && <span className="fallback-notice"><Clock3 size={14} />当前显示 FIFA 静态赛程模板，准确开球时间等待接口同步</span>}
+        {usingFallback && <span className="fallback-notice"><Clock3 size={14} />当前显示 FIFA 官方静态赛程，实时比分和比赛状态等待接口同步</span>}
       </div>
       <div className="stage-tabs schedule-tabs">
         {STAGES.map((item) => <button key={item} className={stage === item ? "active" : ""} onClick={() => setStage(item)}>{item}</button>)}

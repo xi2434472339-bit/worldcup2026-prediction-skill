@@ -23,9 +23,14 @@ export default async (request: Request) => {
     let generated = 0;
     let settled = 0;
     const failures: string[] = [];
+    await db.saveFixtures(fixtures);
 
     for (const fixture of fixtures) {
-      await db.saveFixture(fixture);
+      const inPredictionWindow =
+        canPredictFixture(fixture) &&
+        isOfficialPredictionWindow(fixture.kickoff);
+      if (!fixture.result && !inPredictionWindow) continue;
+
       const existing = await findOfficialPrediction(
         fixture.teamA,
         fixture.teamB,
@@ -42,8 +47,7 @@ export default async (request: Request) => {
 
       if (
         !existing &&
-        canPredictFixture(fixture) &&
-        isOfficialPredictionWindow(fixture.kickoff)
+        inPredictionWindow
       ) {
         try {
           await queueOfficialPrediction(

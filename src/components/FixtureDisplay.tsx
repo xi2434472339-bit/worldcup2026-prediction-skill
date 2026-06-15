@@ -31,6 +31,10 @@ export function fixtureStatus(fixture: FixtureRecord) {
   return "未开赛";
 }
 
+function displayedScore(fixture: FixtureRecord) {
+  return fixture.score ?? fixture.result;
+}
+
 function TeamVisual({
   name,
   flagCode,
@@ -84,6 +88,7 @@ export function FixtureHero({
     );
   }
   const predictable = canPredictFixture(fixture);
+  const score = displayedScore(fixture);
   return (
     <section className="fixture-hero">
       <div className="fixture-hero-top">
@@ -101,7 +106,7 @@ export function FixtureHero({
           confirmed={fixture.teamAConfirmed}
         />
         <div className="fixture-center">
-          <span>VS</span>
+          <span>{score ? `${score.home} - ${score.away}` : "VS"}</span>
           <time>{formatBeijingKickoff(fixture)}</time>
           <small>北京时间</small>
         </div>
@@ -143,7 +148,7 @@ export function FixtureList({
           <span className="fixture-mini-time">{formatBeijingKickoff(fixture)}</span>
           <div>
             <strong>{fixture.teamAFlag ? teamFlag(fixture.teamAFlag) : "·"} {fixture.teamA}</strong>
-            <b>VS</b>
+            <b>{displayedScore(fixture) ? `${displayedScore(fixture)!.home} - ${displayedScore(fixture)!.away}` : "VS"}</b>
             <strong>{fixture.teamBFlag ? teamFlag(fixture.teamBFlag) : "·"} {fixture.teamB}</strong>
           </div>
           <small>{fixture.roundLabel} · {fixtureStatus(fixture)}</small>
