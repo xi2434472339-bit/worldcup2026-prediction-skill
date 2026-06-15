@@ -190,5 +190,7 @@ describe("settlement and public stats", () => {
     assert.equal(stats.settledOfficial, 1);
     assert.equal(stats.outcomeRate, 100);
     assert.equal(stats.backtestCount, 1);
+    assert.equal(stats.backtestOutcomeRate, 0);
+    assert.equal(stats.backtestExactScoreRate, 0);
   });
 });

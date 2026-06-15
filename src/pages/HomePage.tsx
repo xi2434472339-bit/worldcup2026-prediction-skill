@@ -18,6 +18,10 @@ const EMPTY_STATS: PublicStats = {
   outcomeRate: null,
   exactScoreRate: null,
   backtestCount: 0,
+  backtestOutcomeHits: 0,
+  backtestExactScoreHits: 0,
+  backtestOutcomeRate: null,
+  backtestExactScoreRate: null,
   updatedAt: null,
 };
 

@@ -1,0 +1,786 @@
+[
+  {
+    "id": "backtest-match-1",
+    "fixtureId": "400021443",
+    "matchNumber": 1,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-11T19:00:00Z",
+    "lockedAt": "2026-06-15T10:49:05.481Z",
+    "prediction": {
+      "teamA": {
+        "name": "墨西哥",
+        "winProb": 60
+      },
+      "draw": 24,
+      "teamB": {
+        "name": "南非",
+        "winProb": 16
+      },
+      "predictedScore": "2-0",
+      "confidence": "中",
+      "keyFactors": [
+        "东道主主场",
+        "金杯赛冠军",
+        "阿兹特克氛围",
+        "南非新返舞台",
+        "揭幕战压力"
+      ],
+      "analysis": "赛前看，墨西哥硬实力与主场情境优势都更明显，阿兹特克球场会放大节奏和压迫感。南非资料有限，按新返世界杯球队估算，抗压与进攻稳定性稍逊，墨西哥更可能稳扎稳打取胜。",
+      "playersToWatch": [
+        {
+          "team": "墨西哥",
+          "player": "S·希门尼斯",
+          "reason": "效力米兰的锋线支点，具备决定禁区效率的能力。"
+        },
+        {
+          "team": "南非",
+          "player": "特博霍·莫科纳",
+          "reason": "资料库未详列球员，按常识估算其远射和定位球是破局点。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:49:05.481Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3810,
+        "completionTokens": 699,
+        "totalTokens": 4509,
+        "reasoningTokens": 447,
+        "cost": 0.04002
+      }
+    },
+    "createdAt": "2026-06-15T10:49:05.481Z",
+    "result": {
+      "home": 2,
+      "away": 0,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": true,
+    "exactScoreHit": true,
+    "settledAt": "2026-06-15T10:49:05.481Z"
+  },
+  {
+    "id": "backtest-match-2",
+    "fixtureId": "400021441",
+    "matchNumber": 2,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-12T02:00:00Z",
+    "lockedAt": "2026-06-15T10:49:15.090Z",
+    "prediction": {
+      "teamA": {
+        "name": "韩国",
+        "winProb": 38
+      },
+      "draw": 30,
+      "teamB": {
+        "name": "捷克",
+        "winProb": 32
+      },
+      "predictedScore": "2-1",
+      "confidence": "中",
+      "keyFactors": [
+        "韩国核心更强",
+        "捷克锋线有支点",
+        "实力差距很小",
+        "交锋参考有限"
+      ],
+      "analysis": "两队档位接近，韩国胜在孙兴慜、李刚仁与金玟哉形成的中轴更完整；捷克有希克支点和欧洲中游对抗强度。历史交锋参考不确定，本场倾向韩国小胜。",
+      "playersToWatch": [
+        {
+          "team": "韩国",
+          "player": "孙兴慜",
+          "reason": "仍是韩国反击与终结的关键人物。"
+        },
+        {
+          "team": "捷克",
+          "player": "希克",
+          "reason": "禁区支点和把握机会能力决定捷克上限。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:49:15.090Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3809,
+        "completionTokens": 424,
+        "totalTokens": 4233,
+        "reasoningTokens": 216,
+        "cost": 0.031765
+      }
+    },
+    "createdAt": "2026-06-15T10:49:15.090Z",
+    "result": {
+      "home": 2,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": true,
+    "exactScoreHit": true,
+    "settledAt": "2026-06-15T10:49:15.090Z"
+  },
+  {
+    "id": "backtest-match-3",
+    "fixtureId": "400021449",
+    "matchNumber": 3,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-12T19:00:00Z",
+    "lockedAt": "2026-06-15T10:49:28.396Z",
+    "prediction": {
+      "teamA": {
+        "name": "加拿大",
+        "winProb": 46
+      },
+      "draw": 29,
+      "teamB": {
+        "name": "波黑",
+        "winProb": 25
+      },
+      "predictedScore": "2-1",
+      "confidence": "中",
+      "keyFactors": [
+        "加拿大主场",
+        "冲击力占优",
+        "戴维斯状态疑问",
+        "波黑锋线老化"
+      ],
+      "analysis": "加拿大坐镇多伦多，速度与冲击力更适合主动压迫；波黑有哲科经验，但整体年龄与节奏略吃亏。戴维斯复出状态仍有不确定性，主队小胜倾向更明确。",
+      "playersToWatch": [
+        {
+          "team": "加拿大",
+          "player": "阿方索·戴维斯",
+          "reason": "复出后状态待观察，但其边路推进仍是加拿大上限关键。"
+        },
+        {
+          "team": "波黑",
+          "player": "哲科",
+          "reason": "40岁最后一舞，禁区支点和终结经验仍是波黑核心依靠。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:49:28.396Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3808,
+        "completionTokens": 501,
+        "totalTokens": 4309,
+        "reasoningTokens": 282,
+        "cost": 0.03407
+      }
+    },
+    "createdAt": "2026-06-15T10:49:28.396Z",
+    "result": {
+      "home": 1,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": false,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:49:28.396Z"
+  },
+  {
+    "id": "backtest-match-4",
+    "fixtureId": "400021458",
+    "matchNumber": 4,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-13T01:00:00Z",
+    "lockedAt": "2026-06-15T10:49:44.443Z",
+    "prediction": {
+      "teamA": {
+        "name": "美国",
+        "winProb": 48
+      },
+      "draw": 28,
+      "teamB": {
+        "name": "巴拉圭",
+        "winProb": 24
+      },
+      "predictedScore": "1-0",
+      "confidence": "中",
+      "keyFactors": [
+        "美国主场加成",
+        "巴拉圭防反硬",
+        "普利西奇牵引",
+        "交锋参考有限",
+        "硬仗成色待验"
+      ],
+      "analysis": "美国坐镇英格尔伍德，东道主氛围与波切蒂诺体系带来优势；巴拉圭重返世界杯，防守反击硬度不低，会压缩空间。具体交锋与巴拉圭阵容资料有限，按南美中游估算。倾向美国小胜，但平局风险不低。",
+      "playersToWatch": [
+        {
+          "team": "美国",
+          "player": "普利西奇",
+          "reason": "美国前场核心，能用突破和终结打开僵局。"
+        },
+        {
+          "team": "巴拉圭",
+          "player": "恩西索",
+          "reason": "按常识估算为前场关键点，反击中的个人能力值得关注。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:49:44.443Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3810,
+        "completionTokens": 766,
+        "totalTokens": 4576,
+        "reasoningTokens": 516,
+        "cost": 0.04203
+      }
+    },
+    "createdAt": "2026-06-15T10:49:44.443Z",
+    "result": {
+      "home": 4,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": true,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:49:44.443Z"
+  },
+  {
+    "id": "backtest-match-5",
+    "fixtureId": "400021453",
+    "matchNumber": 5,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-14T01:00:00Z",
+    "lockedAt": "2026-06-15T10:50:03.312Z",
+    "prediction": {
+      "teamA": {
+        "name": "海地",
+        "winProb": 20
+      },
+      "draw": 29,
+      "teamB": {
+        "name": "苏格兰",
+        "winProb": 51
+      },
+      "predictedScore": "0-1",
+      "confidence": "低",
+      "keyFactors": [
+        "苏格兰欧战成色",
+        "海地经验偏少",
+        "定位球威胁",
+        "资料不足有估算"
+      ],
+      "analysis": "苏格兰整体档位和大赛资格赛含金量更高，麦克托米奈与罗伯逊能提供攻防支点。海地励志回归但资料有限，按新军档估算，预计以防守消耗为主，苏格兰小胜倾向更清晰。",
+      "playersToWatch": [
+        {
+          "team": "海地",
+          "player": "弗朗茨迪·皮耶罗",
+          "reason": "海地前场支点，反击和禁区抢点是主要破局方式。"
+        },
+        {
+          "team": "苏格兰",
+          "player": "斯科特·麦克托米奈",
+          "reason": "后插上得分能力突出，能决定僵持战走势。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:50:03.312Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3810,
+        "completionTokens": 652,
+        "totalTokens": 4462,
+        "reasoningTokens": 407,
+        "cost": 0.03861
+      }
+    },
+    "createdAt": "2026-06-15T10:50:03.312Z",
+    "result": {
+      "home": 0,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": true,
+    "exactScoreHit": true,
+    "settledAt": "2026-06-15T10:50:03.312Z"
+  },
+  {
+    "id": "backtest-match-6",
+    "fixtureId": "400021463",
+    "matchNumber": 6,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-14T04:00:00Z",
+    "lockedAt": "2026-06-15T10:50:15.190Z",
+    "prediction": {
+      "teamA": {
+        "name": "澳大利亚",
+        "winProb": 27
+      },
+      "draw": 29,
+      "teamB": {
+        "name": "土耳其",
+        "winProb": 44
+      },
+      "predictedScore": "1-2",
+      "confidence": "中",
+      "keyFactors": [
+        "土耳其天赋更高",
+        "澳洲整体顽强",
+        "青年军波动大",
+        "定位球很关键"
+      ],
+      "analysis": "土耳其纸面天赋和中前场创造力更占优，居莱尔、恰尔汗奥卢能提升进攻上限；澳大利亚身体对抗和纪律性强，具备拖入均势的能力。综合看土耳其略占先机，但波动性让平局空间不小。",
+      "playersToWatch": [
+        {
+          "team": "澳大利亚",
+          "player": "哈里·苏塔",
+          "reason": "防空和定位球威胁是澳大利亚破局关键。"
+        },
+        {
+          "team": "土耳其",
+          "player": "阿尔达·居莱尔",
+          "reason": "他的灵感与最后一传能决定土耳其进攻质量。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:50:15.190Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3811,
+        "completionTokens": 528,
+        "totalTokens": 4339,
+        "reasoningTokens": 288,
+        "cost": 0.034895
+      }
+    },
+    "createdAt": "2026-06-15T10:50:15.190Z",
+    "result": {
+      "home": 2,
+      "away": 0,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": false,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:50:15.190Z"
+  },
+  {
+    "id": "backtest-match-7",
+    "fixtureId": "400021456",
+    "matchNumber": 7,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-13T22:00:00Z",
+    "lockedAt": "2026-06-15T10:50:25.423Z",
+    "prediction": {
+      "teamA": {
+        "name": "巴西",
+        "winProb": 47
+      },
+      "draw": 28,
+      "teamB": {
+        "name": "摩洛哥",
+        "winProb": 25
+      },
+      "predictedScore": "2-1",
+      "confidence": "中",
+      "keyFactors": [
+        "巴西状态回升",
+        "摩洛哥强韧防线",
+        "维尼修斯冲击",
+        "大赛经验接近",
+        "交锋样本有限"
+      ],
+      "analysis": "巴西在安切洛蒂接手后进攻层次回升，个人爆点更多；摩洛哥延续四强班底，反击和边路很有威胁。小组赛节奏下平局不低，但巴西把握机会能力略占上风。",
+      "playersToWatch": [
+        {
+          "team": "巴西",
+          "player": "维尼修斯",
+          "reason": "一对一突破和纵深冲击是巴西撕开防线的关键。"
+        },
+        {
+          "team": "摩洛哥",
+          "player": "阿什拉夫",
+          "reason": "攻守转换中的速度与覆盖能力将直接影响摩洛哥反击质量。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:50:25.423Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3810,
+        "completionTokens": 407,
+        "totalTokens": 4217,
+        "reasoningTokens": 168,
+        "cost": 0.03126
+      }
+    },
+    "createdAt": "2026-06-15T10:50:25.423Z",
+    "result": {
+      "home": 1,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": false,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:50:25.423Z"
+  },
+  {
+    "id": "backtest-match-8",
+    "fixtureId": "400021447",
+    "matchNumber": 8,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-13T19:00:00Z",
+    "lockedAt": "2026-06-15T10:50:38.517Z",
+    "prediction": {
+      "teamA": {
+        "name": "卡塔尔",
+        "winProb": 20
+      },
+      "draw": 27,
+      "teamB": {
+        "name": "瑞士",
+        "winProb": 53
+      },
+      "predictedScore": "1-2",
+      "confidence": "中",
+      "keyFactors": [
+        "瑞士整体更稳",
+        "卡塔尔韧性强",
+        "扎卡中场掌控",
+        "小组赛容错高"
+      ],
+      "analysis": "赛前看瑞士是B组实际最强队，阵容整体性和大赛稳定性明显占优。卡塔尔有亚洲杯冠军底子，反击和定位球存在威胁，但面对瑞士的中场控制与防线纪律，90分钟更可能小负。",
+      "playersToWatch": [
+        {
+          "team": "卡塔尔",
+          "player": "阿克拉姆·阿菲夫",
+          "reason": "进攻创造力核心，个人突破是制造冷门的关键点。"
+        },
+        {
+          "team": "瑞士",
+          "player": "格拉尼特·扎卡",
+          "reason": "中场节奏与攻防转换枢纽，决定瑞士压制力。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:50:38.517Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3810,
+        "completionTokens": 492,
+        "totalTokens": 4302,
+        "reasoningTokens": 255,
+        "cost": 0.03381
+      }
+    },
+    "createdAt": "2026-06-15T10:50:38.517Z",
+    "result": {
+      "home": 1,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": false,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:50:38.517Z"
+  },
+  {
+    "id": "backtest-match-9",
+    "fixtureId": "400021467",
+    "matchNumber": 9,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-14T23:00:00Z",
+    "lockedAt": "2026-06-15T10:50:54.077Z",
+    "prediction": {
+      "teamA": {
+        "name": "科特迪瓦",
+        "winProb": 30
+      },
+      "draw": 31,
+      "teamB": {
+        "name": "厄瓜多尔",
+        "winProb": 39
+      },
+      "predictedScore": "1-2",
+      "confidence": "中",
+      "keyFactors": [
+        "厄瓜防守极硬",
+        "南美预选强势",
+        "科特非洲冠军",
+        "中场对抗关键"
+      ],
+      "analysis": "两队身体对抗和防守强度都高，科特迪瓦有非洲杯冠军底气，但具体阵容细节需估算。厄瓜多尔预选赛表现更稳定，凯塞多带动中场，倾向小胜。",
+      "playersToWatch": [
+        {
+          "team": "科特迪瓦",
+          "player": "凯西",
+          "reason": "中场推进和对抗能力是科特迪瓦打破僵局的关键。"
+        },
+        {
+          "team": "厄瓜多尔",
+          "player": "凯塞多",
+          "reason": "防守覆盖与由守转攻能力决定厄瓜多尔节奏。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:50:54.077Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3814,
+        "completionTokens": 747,
+        "totalTokens": 4561,
+        "reasoningTokens": 516,
+        "cost": 0.04148
+      }
+    },
+    "createdAt": "2026-06-15T10:50:54.077Z",
+    "result": {
+      "home": 1,
+      "away": 0,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": false,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:50:54.077Z"
+  },
+  {
+    "id": "backtest-match-10",
+    "fixtureId": "400021464",
+    "matchNumber": 10,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-14T17:00:00Z",
+    "lockedAt": "2026-06-15T10:51:09.593Z",
+    "prediction": {
+      "teamA": {
+        "name": "德国",
+        "winProb": 80
+      },
+      "draw": 13,
+      "teamB": {
+        "name": "库拉索",
+        "winProb": 7
+      },
+      "predictedScore": "3-0",
+      "confidence": "高",
+      "keyFactors": [
+        "德国硬实力碾压",
+        "维尔茨掌控节奏",
+        "库拉索大赛新军",
+        "交锋参考有限"
+      ],
+      "analysis": "德国阵容厚度、世界杯底蕴和预选赛稳定性明显占优，库拉索是励志新军，具体阵容资料有限，按同档估算抗压难度很大。德国若把握效率正常，倾向较稳取胜。",
+      "playersToWatch": [
+        {
+          "team": "德国",
+          "player": "弗洛里安·维尔茨",
+          "reason": "他是德国前场创造力核心，能撕开密集防线。"
+        },
+        {
+          "team": "库拉索",
+          "player": "莱安德罗·巴库纳",
+          "reason": "经验和中场覆盖是球队抵抗强压的关键。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:51:09.593Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3810,
+        "completionTokens": 699,
+        "totalTokens": 4509,
+        "reasoningTokens": 468,
+        "cost": 0.04002
+      }
+    },
+    "createdAt": "2026-06-15T10:51:09.593Z",
+    "result": {
+      "home": 7,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": true,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:51:09.593Z"
+  },
+  {
+    "id": "backtest-match-11",
+    "fixtureId": "400021470",
+    "matchNumber": 11,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-14T20:00:00Z",
+    "lockedAt": "2026-06-15T10:51:25.090Z",
+    "prediction": {
+      "teamA": {
+        "name": "荷兰",
+        "winProb": 42
+      },
+      "draw": 29,
+      "teamB": {
+        "name": "日本",
+        "winProb": 29
+      },
+      "predictedScore": "2-1",
+      "confidence": "中",
+      "keyFactors": [
+        "荷兰预选强势",
+        "日本碾压出线",
+        "荷兰后场更稳",
+        "交锋样本有限",
+        "中立场地均衡"
+      ],
+      "analysis": "荷兰凭范迪克与德容的中后场控制略占上风，但日本旅欧体系成熟、转换速度快，足以制造持续压力。历史交锋参考有限，赛前倾向荷兰小胜。",
+      "playersToWatch": [
+        {
+          "team": "荷兰",
+          "player": "范迪克",
+          "reason": "防线核心与定位球威胁，是限制日本反击的关键。"
+        },
+        {
+          "team": "日本",
+          "player": "久保建英",
+          "reason": "前场创造力突出，能在肋部撕开荷兰防线。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:51:25.090Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3808,
+        "completionTokens": 502,
+        "totalTokens": 4310,
+        "reasoningTokens": 285,
+        "cost": 0.0341
+      }
+    },
+    "createdAt": "2026-06-15T10:51:25.090Z",
+    "result": {
+      "home": 2,
+      "away": 2,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": false,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:51:25.090Z"
+  },
+  {
+    "id": "backtest-match-12",
+    "fixtureId": "400021474",
+    "matchNumber": 12,
+    "source": "backtest",
+    "stage": "小组赛",
+    "kickoff": "2026-06-15T02:00:00Z",
+    "lockedAt": "2026-06-15T10:51:42.057Z",
+    "prediction": {
+      "teamA": {
+        "name": "瑞典",
+        "winProb": 42
+      },
+      "draw": 30,
+      "teamB": {
+        "name": "突尼斯",
+        "winProb": 28
+      },
+      "predictedScore": "1-0",
+      "confidence": "低",
+      "keyFactors": [
+        "瑞典双枪优势",
+        "突尼斯防守稳",
+        "瑞典整体性存疑",
+        "小组赛平局权重"
+      ],
+      "analysis": "赛前看瑞典纸面火力更强，伊萨克与哲凯赖什能制造更高上限；但球队整体性和预选赛波动明显。突尼斯防守组织严密、进攻偏弱，预计比赛胶着，瑞典小胜倾向更清晰。",
+      "playersToWatch": [
+        {
+          "team": "瑞典",
+          "player": "伊萨克",
+          "reason": "锋线个人能力突出，是瑞典打破密集防守的关键。"
+        },
+        {
+          "team": "突尼斯",
+          "player": "斯希里",
+          "reason": "中场拦截覆盖重要，将决定突尼斯防线承压质量。"
+        }
+      ]
+    },
+    "generation": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.5-20260423",
+      "reasoningEffort": "medium",
+      "generatedAt": "2026-06-15T10:51:42.057Z",
+      "promptVersion": "e68027818509559c",
+      "usage": {
+        "promptTokens": 3811,
+        "completionTokens": 742,
+        "totalTokens": 4553,
+        "reasoningTokens": 516,
+        "cost": 0.041315
+      }
+    },
+    "createdAt": "2026-06-15T10:51:42.057Z",
+    "result": {
+      "home": 5,
+      "away": 1,
+      "source": "fifa-api",
+      "confirmedAt": "2026-06-15T10:48:51.978Z"
+    },
+    "outcomeHit": true,
+    "exactScoreHit": false,
+    "settledAt": "2026-06-15T10:51:42.057Z"
+  }
+]

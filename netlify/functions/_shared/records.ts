@@ -9,16 +9,26 @@ import {
   officialPredictionRecordId,
   settlePrediction,
 } from "../../../shared/domain";
+import { HISTORICAL_BACKTESTS } from "../../../shared/historical";
 import { db } from "./storage";
 
 export const officialPredictionId = officialPredictionRecordId;
 
+async function allPredictionRecords() {
+  const dynamic = await db.listPredictions();
+  const records = new Map(
+    HISTORICAL_BACKTESTS.map((record) => [record.id, record]),
+  );
+  for (const record of dynamic) records.set(record.id, record);
+  return [...records.values()];
+}
+
 export async function publicStats() {
-  return calculateStats(await db.listPredictions());
+  return calculateStats(await allPredictionRecords());
 }
 
 export async function recentPredictions(limit = 6) {
-  return (await db.listPredictions())
+  return (await allPredictionRecords())
     .filter((record) => record.source !== "user")
     .sort((a, b) => b.kickoff.localeCompare(a.kickoff))
     .slice(0, limit);
@@ -72,7 +82,7 @@ export async function queryPredictions(options: {
   to?: string;
 }): Promise<PaginatedPredictions> {
   const { page, pageSize, team, status, source, from, to } = options;
-  let records = (await db.listPredictions()).filter((record) => record.source !== "user");
+  let records = (await allPredictionRecords()).filter((record) => record.source !== "user");
   if (team) {
     records = records.filter(
       (record) =>

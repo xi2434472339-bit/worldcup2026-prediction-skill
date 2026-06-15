@@ -26,9 +26,9 @@ export function HistoryCards({ records }: { records: PredictionRecord[] }) {
         <article className="history-card" key={record.id}>
           <div className="history-meta">
             <span className={`source-tag ${record.source}`}>
-              {record.source === "official" ? "官方预测" : "历史回测"}
+              {record.source === "official" ? "赛前官方预测" : "赛后回测（非赛前）"}
             </span>
-            <time>{formatDate(record.kickoff)}</time>
+            <time>{record.matchNumber ? `第 ${record.matchNumber} 场 · ` : ""}{formatDate(record.kickoff)}</time>
           </div>
           <div className="history-match">
             <strong>{record.prediction.teamA.name}</strong>

@@ -51,6 +51,7 @@ export async function generateWithAudit(
     kickoff?: string;
     fixtureId?: string;
     matchNumber?: number;
+    now?: Date;
   },
 ) {
   const result = await generatePrediction(teamA, teamB, stage, options);

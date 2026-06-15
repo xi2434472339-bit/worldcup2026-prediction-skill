@@ -1,11 +1,25 @@
 import { Filter, RotateCcw } from "lucide-react";
 import { useEffect, useState } from "react";
-import type { PaginatedPredictions } from "../../shared/domain";
+import type { PaginatedPredictions, PublicStats } from "../../shared/domain";
 import { TEAMS } from "../../shared/teams";
 import { api } from "../api";
 import { HistoryCards } from "../components/HistoryCards";
+import { StatsPanel } from "../components/StatsPanel";
 
 const EMPTY: PaginatedPredictions = { items: [], page: 1, pageSize: 12, total: 0, totalPages: 0 };
+const EMPTY_STATS: PublicStats = {
+  settledOfficial: 0,
+  outcomeHits: 0,
+  exactScoreHits: 0,
+  outcomeRate: null,
+  exactScoreRate: null,
+  backtestCount: 0,
+  backtestOutcomeHits: 0,
+  backtestExactScoreHits: 0,
+  backtestOutcomeRate: null,
+  backtestExactScoreRate: null,
+  updatedAt: null,
+};
 
 export function HistoryPage() {
   const [data, setData] = useState(EMPTY);
@@ -13,6 +27,7 @@ export function HistoryPage() {
   const [status, setStatus] = useState("");
   const [source, setSource] = useState("");
   const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState(EMPTY_STATS);
 
   function load(
     page = 1,
@@ -29,15 +44,20 @@ export function HistoryPage() {
       .finally(() => setLoading(false));
   }
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    load();
+    api.stats().then(setStats).catch(() => undefined);
+  }, []);
 
   return (
     <section className="page-section">
       <div className="page-hero">
         <span className="eyebrow">VERIFIABLE RECORD</span>
         <h1>每一场，都留下预测时间</h1>
-        <p>公开赛前概率、预测比分与实际结果。官方预测和赛后回测严格分开。</p>
+        <p>公开预测比分、实际比分和命中结果。赛前官方预测与赛后回测严格分开统计。</p>
       </div>
+      <StatsPanel stats={stats} />
+      <p className="comparison-note">当前已结束比赛为赛后回测，用同一模型模拟赛前判断；它们不属于赛前锁定记录，不能与未来官方预测混为一谈。</p>
       <div className="filter-bar">
         <Filter size={18} />
         <select value={team} onChange={(event) => setTeam(event.target.value)}>

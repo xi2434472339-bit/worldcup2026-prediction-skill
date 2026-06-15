@@ -76,6 +76,10 @@ export interface PublicStats {
   outcomeRate: number | null;
   exactScoreRate: number | null;
   backtestCount: number;
+  backtestOutcomeHits: number;
+  backtestExactScoreHits: number;
+  backtestOutcomeRate: number | null;
+  backtestExactScoreRate: number | null;
   updatedAt: string | null;
 }
 
@@ -247,9 +251,14 @@ export function calculateStats(records: PredictionRecord[]): PublicStats {
   const official = records.filter(
     (record) => record.source === "official" && record.result && record.settledAt,
   );
+  const backtests = records.filter(
+    (record) => record.source === "backtest" && record.result && record.settledAt,
+  );
   const outcomeHits = official.filter((record) => record.outcomeHit).length;
   const exactScoreHits = official.filter((record) => record.exactScoreHit).length;
-  const updatedAt = official
+  const backtestOutcomeHits = backtests.filter((record) => record.outcomeHit).length;
+  const backtestExactScoreHits = backtests.filter((record) => record.exactScoreHit).length;
+  const updatedAt = [...official, ...backtests]
     .map((record) => record.settledAt ?? record.createdAt)
     .sort()
     .at(-1) ?? null;
@@ -262,7 +271,15 @@ export function calculateStats(records: PredictionRecord[]): PublicStats {
     exactScoreRate: official.length
       ? Math.round((exactScoreHits / official.length) * 1000) / 10
       : null,
-    backtestCount: records.filter((record) => record.source === "backtest").length,
+    backtestCount: backtests.length,
+    backtestOutcomeHits,
+    backtestExactScoreHits,
+    backtestOutcomeRate: backtests.length
+      ? Math.round((backtestOutcomeHits / backtests.length) * 1000) / 10
+      : null,
+    backtestExactScoreRate: backtests.length
+      ? Math.round((backtestExactScoreHits / backtests.length) * 1000) / 10
+      : null,
     updatedAt,
   };
 }

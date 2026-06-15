@@ -181,6 +181,10 @@ export async function generatePrediction(
   const version = promptVersion(skill);
   const fetchImpl = options.fetchImpl ?? fetch;
   const currentTime = (options.now ?? new Date()).toISOString();
+  const backtestInstruction =
+    options.purpose === "backtest"
+      ? "这是赛后回测，但你必须忽略比赛实际结果，只按资料截止时间模拟赛前判断。"
+      : "";
   const timeoutMs = reasoningEffort === "high" ? 120_000 : 26_000;
 
   for (let attempt = 0; attempt < 2; attempt += 1) {
@@ -225,6 +229,7 @@ export async function generatePrediction(
                 options.kickoff ? `比赛开赛时间：${options.kickoff}` : "",
                 `预测用途：${options.purpose ?? "custom"}`,
                 `请预测这场 2026 世界杯比赛：【${stage}】${teamA} vs ${teamB}。`,
+                backtestInstruction,
                 "比分必须反映胜平负概率和双方实力差距，不得机械套用任何示例比分。",
                 "严格输出符合 JSON Schema 的对象，禁止输出投注、赔率或下注建议。",
                 retryInstruction,
