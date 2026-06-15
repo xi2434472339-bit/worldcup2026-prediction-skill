@@ -14,6 +14,8 @@
 - 正确 Netlify 账号 `2434472339@qq.com` 下的项目 `gova-prediction-2026` 已完成生产部署。
 - 生产网址：`https://gova-prediction-2026.netlify.app`。
 - FIFA 官方 104 场比赛编号、对阵槽位和 UTC 开球时间已同步，线上 `/api/fixtures` 验证全部 `kickoffConfirmed=true`。
+- `OPENROUTER_API_KEY` 已作为生产 Secret 配置到正确 Netlify 站点。
+- 生产 `/api/predict` 真实调用成功，返回模型 `openai/gpt-5.5-20260423`。
 
 ## 已完成内容
 
@@ -27,16 +29,15 @@
 - 修正原静态赛程按日期和队名重新编号的问题，改用 FIFA 官方比赛编号。
 - 同步 72 场小组赛和 32 场淘汰赛的官方开球时间及淘汰赛槽位。
 - Netlify 生产 Deploy `6a2fcba4b776b08d8c90c689` 已上线，首页、`/api/bootstrap` 和 `/api/fixtures` 均通过验收。
+- OpenRouter Secret 生效后重新部署 11 个 Functions，并完成一次真实自定义预测验收。
 
 ## 当前风险
 
 - `npm install` 报告 11 个 high severity vulnerabilities；未执行 `npm audit fix --force`，避免破坏性升级。
-- Netlify 生产站点尚未配置 `OPENROUTER_API_KEY`，真实 AI 预测暂不可用。
 - 尚未配置 API-Football 密钥；官方静态赛程时间已准确，但实时比分、状态和自动更新仍不可用。
 - GitHub Pages 不运行 Netlify Functions，因此静态预览不提供真实 AI 预测、兑换、后台管理和自动赛程同步。
 
 ## 下次优先事项
 
-- 经用户明确授权后，将本机已有的 `OPENROUTER_API_KEY` 作为 Secret 上传到正确 Netlify 站点。
 - 如需实时比分和比赛状态，配置 `API_FOOTBALL_KEY` 与 `API_FOOTBALL_LEAGUE_ID`。
 - 配置管理员密码、联系微信和收款码等运营变量。
