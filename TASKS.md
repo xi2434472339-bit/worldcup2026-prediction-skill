@@ -23,10 +23,15 @@
 - [x] 批量同步 104 场比赛状态、比分、场馆和赛果到 Netlify Blobs。
 - [x] 验证生产 `/api/fixtures` 返回动态数据和 12 场已结束比分。
 - [x] 确认 `sync-football` 按每 30 分钟计划部署。
+- [x] 生成 12 场已结束比赛的历史回测记录。
+- [x] 在历史页展示已完赛比赛、预测比分、实际比分和命中结果。
+- [x] 在统计面板区分官方赛前预测和赛后历史回测准确率。
+- [x] 发布并验证 GitHub Pages 最终备用站点：`https://xi2434472339-bit.github.io/worldcup2026-prediction-skill/#/history`。
 
 ## 待处理
 
 - [ ] 配置管理员密码、联系微信和收款码等运营变量。
+- [ ] 解决 Netlify 最终 UI 部署阻塞：CLI 返回 `JSONHTTPError: Forbidden`，MCP 部署通道返回 `404 Not Found`。
 - [ ] 在下一次自然定时执行后检查 `sync-football` Functions 日志。
 - [ ] 部署后确认 `official-prediction-background` 可执行官方 high 推理任务。
 - [ ] 根据 `npm audit` 结果规划非破坏性依赖安全升级。

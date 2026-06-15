@@ -18,6 +18,10 @@
 - 生产 `/api/predict` 真实调用成功，返回模型 `openai/gpt-5.5-20260423`。
 - 实时赛程源已切换为 FIFA 官方 Calendar API，无需 API-Football 密钥。
 - `sync-football` 每 30 分钟同步 104 场比赛状态和比分，生产数据已从静态回退切换为动态数据。
+- 已把 12 场已结束比赛做成历史回测数据并内置到静态镜像：历史页会显示实际比分、预测比分、赛果命中和比分命中。
+- 当前历史回测准确率：赛果命中 6/12 = 50%，精确比分命中 3/12 = 25%；官方赛前预测目前仍无已结算样本。
+- GitHub Pages 备用站点已更新到最终版并验证可访问：`https://xi2434472339-bit.github.io/worldcup2026-prediction-skill/#/history`。
+- Netlify 生产站点仍停留在 Deploy `6a2fd875e6fab595fc38e9d4`；最终 UI 重新部署被 Netlify API 拒绝，CLI 返回 `JSONHTTPError: Forbidden`，MCP 部署通道返回 `404 Not Found`。
 
 ## 已完成内容
 
@@ -35,13 +39,18 @@
 - 增加 FIFA 官方实时状态、比分、场馆和赛果适配。
 - 将 104 场 Blob 写入改为批量保存，满足 Netlify Scheduled Function 30 秒执行限制。
 - 生产 Deploy `6a2fd2638b4651bc0ea1b699` 已上线；同步后 `/api/fixtures` 返回 `usingFallback=false`，当前 12 场完赛比分已写入。
+- 增加赛后历史回测生成任务，生产端已生成 12 条 `source=backtest` 记录。
+- 将 12 条历史回测结果固化到前端静态数据，保证 GitHub Pages 备用站点也能显示已完赛比赛、预测结果和准确率对比。
+- GitHub Pages Actions 已完成，最终静态资源返回 200，并确认包含 `backtest-match-1` 和 `backtestOutcomeRate`。
 
 ## 当前风险
 
 - `npm install` 报告 11 个 high severity vulnerabilities；未执行 `npm audit fix --force`，避免破坏性升级。
 - GitHub Pages 不运行 Netlify Functions，因此静态预览不提供真实 AI 预测、兑换、后台管理和自动赛程同步。
+- Netlify 当前账号和站点绑定正确，但最终 UI 发布仍被 Netlify 服务端拒绝；需要在 Netlify 控制台检查站点部署权限、套餐/用量限制或重新授权部署通道。
 
 ## 下次优先事项
 
 - 配置管理员密码、联系微信和收款码等运营变量。
+- 解决 Netlify `Forbidden` 部署阻塞后，重新发布最终 UI 到 `https://gova-prediction-2026.netlify.app`。
 - 在下一次自然定时执行后检查 `sync-football` Functions 日志。
