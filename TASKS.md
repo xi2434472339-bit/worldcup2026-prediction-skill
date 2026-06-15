@@ -6,7 +6,7 @@
 
 - [x] 保存中断现场检查点。
 - [x] 安装 npm 依赖并提交 `package-lock.json`。
-- [x] 运行 `npm.cmd test` 并通过全部 21 个测试。
+- [x] 运行 `npm.cmd test` 并通过全部 24 个测试。
 - [x] 运行 `npm.cmd run build` 并通过生产构建。
 - [x] 验证 Netlify 本地前端启动和 Functions 加载。
 - [x] 验证 `/api/bootstrap` 本地返回 200。
@@ -19,11 +19,14 @@
 - [x] 部署完整 Netlify 生产站点并验证首页、`/api/bootstrap` 和 `/api/fixtures`。
 - [x] 在正确 Netlify 站点配置 `OPENROUTER_API_KEY` 生产 Secret。
 - [x] 重新部署并通过真实 `/api/predict` 调用验证 GPT-5.5 预测链路。
+- [x] 使用 FIFA 官方 API 替代需要密钥的 API-Football 赛程源。
+- [x] 批量同步 104 场比赛状态、比分、场馆和赛果到 Netlify Blobs。
+- [x] 验证生产 `/api/fixtures` 返回动态数据和 12 场已结束比分。
+- [x] 确认 `sync-football` 按每 30 分钟计划部署。
 
 ## 待处理
 
-- [ ] 如需实时比分和状态，在 Netlify 配置 `API_FOOTBALL_KEY` 和 `API_FOOTBALL_LEAGUE_ID`。
 - [ ] 配置管理员密码、联系微信和收款码等运营变量。
-- [ ] 配置 API-Football 后确认 `sync-football` 定时函数每 30 分钟运行。
+- [ ] 在下一次自然定时执行后检查 `sync-football` Functions 日志。
 - [ ] 部署后确认 `official-prediction-background` 可执行官方 high 推理任务。
 - [ ] 根据 `npm audit` 结果规划非破坏性依赖安全升级。
